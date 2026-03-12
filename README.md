@@ -1,2 +1,3 @@
 # stepik-pytest
-Pytest Course by stepik.org
+
+[Pytest Course](https://stepik.org/course/259625/syllabus) by stepik.org
