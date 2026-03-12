@@ -1,0 +1,17 @@
+[tool.pytest.ini_options]
+
+# опции запуска
+strict_markers = true
+addopts = "-vv -ra --strict-markers --cov=src --cov-report=term-missing -n auto"
+
+# Список папок
+testpaths = ["tests"]
+
+markers = [
+    "smoke: Дымовые тесты для критического функционала",
+    "regression: Полный набор регрессионных тестов",
+    "slow: Медленные тесты (например, с доступом к сети)",
+    "profile: Тесты для пользовательского профиля",
+    "slow_slow: Тестирование параллельной работы на mock-slow тестах",
+    "depends: Тестирование зависимых тестов"
+]

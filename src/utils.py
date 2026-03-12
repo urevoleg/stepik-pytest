@@ -1,4 +1,4 @@
-
+import random
 
 def is_even(number):
     """
@@ -7,3 +7,7 @@ def is_even(number):
     :return: True|False
     """
     return not number % 2
+
+
+def get_random_number():
+    return random.randint(1, 100)

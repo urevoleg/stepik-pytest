@@ -25,6 +25,18 @@ def test_divide_by_zero_raises_value_error_with_message():
 
     assert "Нельзя делить на ноль" in str(excinfo.value)
 
+@pytest.mark.smoke
+@pytest.mark.parametrize("a, b, expected", (
+    pytest.param(1, 1, 1, id="divide one by one"),
+    pytest.param(7, 1, 7, id="divide by one"),
+    pytest.param(4, 2, 2, id="even_int2int"),
+    pytest.param(7, 2, 3.5, id="noneven_int2int"),
+    pytest.param(10.5, 2, 5.25, id="float2int"),
+    pytest.param(21.3, 3, 7.1, id="float2float"),
+))
+def test_divide(a, b, expected):
+    assert divide(a, b) == pytest.approx(expected)
+
 
 @pytest.mark.slow
 def test_very_slow_calculation():
